@@ -1,0 +1,278 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.callapp"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+7-->INJECTED
+8        android:minSdkVersion="29"
+8-->INJECTED
+9        android:targetSdkVersion="36" />
+9-->INJECTED
+10
+11    <uses-permission android:name="android.permission.CALL_PHONE" />
+11-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:4:5-69
+11-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:4:22-66
+12    <uses-permission android:name="android.permission.READ_CONTACTS" />
+12-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:5:5-72
+12-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:5:22-69
+13    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+13-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:6:5-72
+13-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:6:22-69
+14    <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
+14-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:7:5-73
+14-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:7:22-70
+15    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+15-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:8:5-75
+15-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:8:22-72
+16    <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" />
+16-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:9:5-77
+16-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:9:22-74
+17
+18    <uses-feature
+18-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:11:5-88
+19        android:name="android.hardware.telephony"
+19-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:11:19-60
+20        android:required="false" />
+20-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:11:61-85
+21
+22    <permission
+22-->[androidx.core:core:1.16.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/b497d4e7e1a065040247f69403015310/transformed/core-1.16.0/AndroidManifest.xml:22:5-24:47
+23        android:name="com.example.callapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+23-->[androidx.core:core:1.16.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/b497d4e7e1a065040247f69403015310/transformed/core-1.16.0/AndroidManifest.xml:23:9-81
+24        android:protectionLevel="signature" />
+24-->[androidx.core:core:1.16.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/b497d4e7e1a065040247f69403015310/transformed/core-1.16.0/AndroidManifest.xml:24:9-44
+25
+26    <uses-permission android:name="com.example.callapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+26-->[androidx.core:core:1.16.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/b497d4e7e1a065040247f69403015310/transformed/core-1.16.0/AndroidManifest.xml:26:5-97
+26-->[androidx.core:core:1.16.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/b497d4e7e1a065040247f69403015310/transformed/core-1.16.0/AndroidManifest.xml:26:22-94
+27
+28    <application
+28-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:13:5-76:19
+29        android:allowBackup="true"
+29-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:14:9-35
+30        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+30-->[androidx.core:core:1.16.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/b497d4e7e1a065040247f69403015310/transformed/core-1.16.0/AndroidManifest.xml:28:18-86
+31        android:dataExtractionRules="@xml/data_extraction_rules"
+31-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:15:9-65
+32        android:debuggable="true"
+33        android:extractNativeLibs="false"
+33-->INJECTED
+34        android:fullBackupContent="@xml/backup_rules"
+34-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:16:9-54
+35        android:icon="@mipmap/ic_launcher"
+35-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:17:9-43
+36        android:label="@string/app_name"
+36-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:18:9-41
+37        android:roundIcon="@mipmap/ic_launcher_round"
+37-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:19:9-54
+38        android:supportsRtl="true"
+38-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:20:9-35
+39        android:testOnly="true"
+40        android:theme="@style/Theme.CallApp" >
+40-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:21:9-45
+41        <activity
+41-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:23:9-41:20
+42            android:name="com.example.callapp.MainActivity"
+42-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:24:13-41
+43            android:exported="true"
+43-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:25:13-36
+44            android:label="@string/app_name"
+44-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:26:13-45
+45            android:theme="@style/Theme.CallApp" >
+45-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:27:13-49
+46            <intent-filter>
+46-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:28:13-31:29
+47                <action android:name="android.intent.action.MAIN" />
+47-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:29:17-69
+47-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:29:25-66
+48
+49                <category android:name="android.intent.category.LAUNCHER" />
+49-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:30:17-77
+49-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:30:27-74
+50            </intent-filter>
+51            <intent-filter>
+51-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:32:13-36:29
+52                <action android:name="android.intent.action.DIAL" />
+52-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:33:17-69
+52-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:33:25-66
+53
+54                <category android:name="android.intent.category.DEFAULT" />
+54-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:34:17-76
+54-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:34:27-73
+55
+56                <data android:scheme="tel" />
+56-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:35:17-46
+56-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:35:23-43
+57            </intent-filter>
+58            <intent-filter>
+58-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:37:13-40:29
+59                <action android:name="android.intent.action.DIAL" />
+59-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:33:17-69
+59-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:33:25-66
+60
+61                <category android:name="android.intent.category.DEFAULT" />
+61-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:34:17-76
+61-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:34:27-73
+62            </intent-filter>
+63        </activity>
+64        <activity
+64-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:43:9-50:52
+65            android:name="com.example.callapp.InCallActivity"
+65-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:44:13-43
+66            android:excludeFromRecents="true"
+66-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:45:13-46
+67            android:exported="true"
+67-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:46:13-36
+68            android:label="@string/app_name"
+68-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:47:13-45
+69            android:showWhenLocked="true"
+69-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:48:13-42
+70            android:theme="@style/Theme.CallApp"
+70-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:50:13-49
+71            android:turnScreenOn="true" />
+71-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:49:13-40
+72
+73        <service
+73-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:52:9-66:19
+74            android:name="com.example.callapp.MinimalInCallService"
+74-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:53:13-49
+75            android:exported="true"
+75-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:54:13-36
+76            android:label="@string/app_name"
+76-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:55:13-45
+77            android:permission="android.permission.BIND_INCALL_SERVICE" >
+77-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:56:13-72
+78            <meta-data
+78-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:57:13-59:40
+79                android:name="android.telecom.IN_CALL_SERVICE_UI"
+79-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:58:17-66
+80                android:value="true" />
+80-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:59:17-37
+81            <meta-data
+81-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:60:13-62:40
+82                android:name="android.telecom.IN_CALL_SERVICE_RINGING"
+82-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:61:17-71
+83                android:value="true" />
+83-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:62:17-37
+84
+85            <intent-filter>
+85-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:63:13-65:29
+86                <action android:name="android.telecom.InCallService" />
+86-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:64:17-72
+86-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:64:25-69
+87            </intent-filter>
+88        </service>
+89        <service
+89-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:68:9-75:19
+90            android:name="com.example.callapp.MinimalCallScreeningService"
+90-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:69:13-56
+91            android:exported="true"
+91-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:70:13-36
+92            android:permission="android.permission.BIND_SCREENING_SERVICE" >
+92-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:71:13-75
+93            <intent-filter>
+93-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:72:13-74:29
+94                <action android:name="android.telecom.CallScreeningService" />
+94-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:73:17-79
+94-->/Users/anupkumarmahata123/AndroidStudioProjects/CallApp/app/src/main/AndroidManifest.xml:73:25-76
+95            </intent-filter>
+96        </service>
+97
+98        <activity
+98-->[androidx.compose.ui:ui-tooling-android:1.10.4] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/019bc0ad6d1e1d4fa9b9f858b737c7f8/transformed/ui-tooling/AndroidManifest.xml:23:9-25:39
+99            android:name="androidx.compose.ui.tooling.PreviewActivity"
+99-->[androidx.compose.ui:ui-tooling-android:1.10.4] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/019bc0ad6d1e1d4fa9b9f858b737c7f8/transformed/ui-tooling/AndroidManifest.xml:24:13-71
+100            android:exported="true" />
+100-->[androidx.compose.ui:ui-tooling-android:1.10.4] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/019bc0ad6d1e1d4fa9b9f858b737c7f8/transformed/ui-tooling/AndroidManifest.xml:25:13-36
+101        <activity
+101-->[androidx.compose.ui:ui-test-manifest:1.10.4] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/553bd32765838f1add94076e5aeb2ec2/transformed/ui-test-manifest-1.10.4/AndroidManifest.xml:23:9-26:79
+102            android:name="androidx.activity.ComponentActivity"
+102-->[androidx.compose.ui:ui-test-manifest:1.10.4] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/553bd32765838f1add94076e5aeb2ec2/transformed/ui-test-manifest-1.10.4/AndroidManifest.xml:24:13-63
+103            android:exported="true"
+103-->[androidx.compose.ui:ui-test-manifest:1.10.4] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/553bd32765838f1add94076e5aeb2ec2/transformed/ui-test-manifest-1.10.4/AndroidManifest.xml:25:13-36
+104            android:theme="@android:style/Theme.Material.Light.NoActionBar" />
+104-->[androidx.compose.ui:ui-test-manifest:1.10.4] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/553bd32765838f1add94076e5aeb2ec2/transformed/ui-test-manifest-1.10.4/AndroidManifest.xml:26:13-76
+105
+106        <provider
+106-->[androidx.emoji2:emoji2:1.4.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/59ec4d2f52a384bf661f73a95a08aaa9/transformed/emoji2-1.4.0/AndroidManifest.xml:24:9-32:20
+107            android:name="androidx.startup.InitializationProvider"
+107-->[androidx.emoji2:emoji2:1.4.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/59ec4d2f52a384bf661f73a95a08aaa9/transformed/emoji2-1.4.0/AndroidManifest.xml:25:13-67
+108            android:authorities="com.example.callapp.androidx-startup"
+108-->[androidx.emoji2:emoji2:1.4.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/59ec4d2f52a384bf661f73a95a08aaa9/transformed/emoji2-1.4.0/AndroidManifest.xml:26:13-68
+109            android:exported="false" >
+109-->[androidx.emoji2:emoji2:1.4.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/59ec4d2f52a384bf661f73a95a08aaa9/transformed/emoji2-1.4.0/AndroidManifest.xml:27:13-37
+110            <meta-data
+110-->[androidx.emoji2:emoji2:1.4.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/59ec4d2f52a384bf661f73a95a08aaa9/transformed/emoji2-1.4.0/AndroidManifest.xml:29:13-31:52
+111                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+111-->[androidx.emoji2:emoji2:1.4.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/59ec4d2f52a384bf661f73a95a08aaa9/transformed/emoji2-1.4.0/AndroidManifest.xml:30:17-75
+112                android:value="androidx.startup" />
+112-->[androidx.emoji2:emoji2:1.4.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/59ec4d2f52a384bf661f73a95a08aaa9/transformed/emoji2-1.4.0/AndroidManifest.xml:31:17-49
+113            <meta-data
+113-->[androidx.lifecycle:lifecycle-process:2.9.4] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/e60a6a2bf2f5afb086487e45ef412e4a/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:29:13-31:52
+114                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+114-->[androidx.lifecycle:lifecycle-process:2.9.4] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/e60a6a2bf2f5afb086487e45ef412e4a/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:30:17-78
+115                android:value="androidx.startup" />
+115-->[androidx.lifecycle:lifecycle-process:2.9.4] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/e60a6a2bf2f5afb086487e45ef412e4a/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:31:17-49
+116            <meta-data
+116-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/6f017c93a46937b3c3d62a9617ef2586/transformed/profileinstaller-1.4.0/AndroidManifest.xml:29:13-31:52
+117                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+117-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/6f017c93a46937b3c3d62a9617ef2586/transformed/profileinstaller-1.4.0/AndroidManifest.xml:30:17-85
+118                android:value="androidx.startup" />
+118-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/6f017c93a46937b3c3d62a9617ef2586/transformed/profileinstaller-1.4.0/AndroidManifest.xml:31:17-49
+119        </provider>
+120
+121        <uses-library
+121-->[androidx.window:window:1.5.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/67093e2d9c5c6fc2b79dc3998248c73e/transformed/window-1.5.0/AndroidManifest.xml:23:9-25:40
+122            android:name="androidx.window.extensions"
+122-->[androidx.window:window:1.5.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/67093e2d9c5c6fc2b79dc3998248c73e/transformed/window-1.5.0/AndroidManifest.xml:24:13-54
+123            android:required="false" />
+123-->[androidx.window:window:1.5.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/67093e2d9c5c6fc2b79dc3998248c73e/transformed/window-1.5.0/AndroidManifest.xml:25:13-37
+124        <uses-library
+124-->[androidx.window:window:1.5.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/67093e2d9c5c6fc2b79dc3998248c73e/transformed/window-1.5.0/AndroidManifest.xml:26:9-28:40
+125            android:name="androidx.window.sidecar"
+125-->[androidx.window:window:1.5.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/67093e2d9c5c6fc2b79dc3998248c73e/transformed/window-1.5.0/AndroidManifest.xml:27:13-51
+126            android:required="false" />
+126-->[androidx.window:window:1.5.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/67093e2d9c5c6fc2b79dc3998248c73e/transformed/window-1.5.0/AndroidManifest.xml:28:13-37
+127
+128        <receiver
+128-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/6f017c93a46937b3c3d62a9617ef2586/transformed/profileinstaller-1.4.0/AndroidManifest.xml:34:9-52:20
+129            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+129-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/6f017c93a46937b3c3d62a9617ef2586/transformed/profileinstaller-1.4.0/AndroidManifest.xml:35:13-76
+130            android:directBootAware="false"
+130-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/6f017c93a46937b3c3d62a9617ef2586/transformed/profileinstaller-1.4.0/AndroidManifest.xml:36:13-44
+131            android:enabled="true"
+131-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/6f017c93a46937b3c3d62a9617ef2586/transformed/profileinstaller-1.4.0/AndroidManifest.xml:37:13-35
+132            android:exported="true"
+132-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/6f017c93a46937b3c3d62a9617ef2586/transformed/profileinstaller-1.4.0/AndroidManifest.xml:38:13-36
+133            android:permission="android.permission.DUMP" >
+133-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/6f017c93a46937b3c3d62a9617ef2586/transformed/profileinstaller-1.4.0/AndroidManifest.xml:39:13-57
+134            <intent-filter>
+134-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/6f017c93a46937b3c3d62a9617ef2586/transformed/profileinstaller-1.4.0/AndroidManifest.xml:40:13-42:29
+135                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+135-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/6f017c93a46937b3c3d62a9617ef2586/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:17-91
+135-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/6f017c93a46937b3c3d62a9617ef2586/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:25-88
+136            </intent-filter>
+137            <intent-filter>
+137-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/6f017c93a46937b3c3d62a9617ef2586/transformed/profileinstaller-1.4.0/AndroidManifest.xml:43:13-45:29
+138                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+138-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/6f017c93a46937b3c3d62a9617ef2586/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:17-85
+138-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/6f017c93a46937b3c3d62a9617ef2586/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:25-82
+139            </intent-filter>
+140            <intent-filter>
+140-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/6f017c93a46937b3c3d62a9617ef2586/transformed/profileinstaller-1.4.0/AndroidManifest.xml:46:13-48:29
+141                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+141-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/6f017c93a46937b3c3d62a9617ef2586/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:17-88
+141-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/6f017c93a46937b3c3d62a9617ef2586/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:25-85
+142            </intent-filter>
+143            <intent-filter>
+143-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/6f017c93a46937b3c3d62a9617ef2586/transformed/profileinstaller-1.4.0/AndroidManifest.xml:49:13-51:29
+144                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+144-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/6f017c93a46937b3c3d62a9617ef2586/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:17-95
+144-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/anupkumarmahata123/.gradle/caches/9.4.1/transforms/6f017c93a46937b3c3d62a9617ef2586/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:25-92
+145            </intent-filter>
+146        </receiver>
+147    </application>
+148
+149</manifest>
