@@ -110,14 +110,14 @@ private fun InCallScreen(onClose: () -> Unit) {
             .fillMaxSize()
             .background(
                 Brush.verticalGradient(
-                    listOf(Color(0xFFFFB08A), Color(0xFFFF8E52), Color(0xFFF0E9E1)),
+                    listOf(Color(0xFF56616B), Color(0xFF242C34), Color(0xFF0E1217)),
                 )
             )
     ) {
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .background(Color(0x33FFFFFF))
+                .background(Color(0x66070A0E))
         )
         Scaffold(
             contentWindowInsets = WindowInsets(0),
@@ -163,12 +163,12 @@ private fun TopCallBar(elapsedSeconds: Int) {
     ) {
         Surface(
             shape = CircleShape,
-            color = Color.White.copy(alpha = 0.88f),
-            border = BorderStroke(1.dp, Color.White.copy(alpha = 0.75f)),
+            color = Color.White.copy(alpha = 0.09f),
+            border = BorderStroke(1.dp, Color.White.copy(alpha = 0.10f)),
         ) {
             Text(
                 text = "‹",
-                color = Color(0xFF151622),
+                color = Color.White.copy(alpha = 0.82f),
                 fontSize = 28.sp,
                 fontWeight = FontWeight.Light,
                 textAlign = TextAlign.Center,
@@ -177,26 +177,26 @@ private fun TopCallBar(elapsedSeconds: Int) {
         }
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Text(
-                text = "Active call",
-                color = Color.White.copy(alpha = 0.86f),
+                text = "Carolyn Statingham",
+                color = Color.White.copy(alpha = 0.72f),
                 fontSize = 13.sp,
                 fontWeight = FontWeight.SemiBold,
             )
             Text(
                 text = formatDuration(elapsedSeconds),
-                color = Color.White,
-                fontSize = 18.sp,
+                color = Color(0xFF2EC4A6),
+                fontSize = 24.sp,
                 fontWeight = FontWeight.SemiBold,
             )
         }
         Surface(
             shape = CircleShape,
-            color = Color.White.copy(alpha = 0.88f),
-            border = BorderStroke(1.dp, Color.White.copy(alpha = 0.75f)),
+            color = Color.White.copy(alpha = 0.09f),
+            border = BorderStroke(1.dp, Color.White.copy(alpha = 0.10f)),
         ) {
             Text(
                 text = "⋯",
-                color = Color(0xFF151622),
+                color = Color.White.copy(alpha = 0.82f),
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Center,
@@ -216,9 +216,9 @@ private fun DarkCallCard(
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .height(646.dp),
-        shape = RoundedCornerShape(36.dp),
-        colors = CardDefaults.cardColors(containerColor = Color(0xEE171823)),
+            .height(650.dp),
+        shape = RoundedCornerShape(34.dp),
+        colors = CardDefaults.cardColors(containerColor = Color(0xF012171E)),
         border = BorderStroke(1.dp, Color.White.copy(alpha = 0.14f)),
         elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
     ) {
@@ -258,7 +258,7 @@ private fun CallerHero() {
                 .clip(RoundedCornerShape(34.dp))
                 .background(
                     Brush.radialGradient(
-                        listOf(Color(0xFFFFD3C2), Color(0xFF925B73), Color(0xFF34202D))
+                        listOf(Color(0xFF2EC4A6), Color(0xFF234840), Color(0xFF111821))
                     )
                 ),
             contentAlignment = Alignment.Center,
@@ -280,7 +280,7 @@ private fun CallerHero() {
         }
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Text(
-                text = "Ananya Sharma",
+                text = "Carolyn Statingham",
                 color = Color.White,
                 fontSize = 25.sp,
                 fontWeight = FontWeight.SemiBold,
@@ -290,7 +290,7 @@ private fun CallerHero() {
                 modifier = Modifier.fillMaxWidth(),
             )
             Text(
-                text = "(900) 000-0000",
+                text = "+977 1111 222 444",
                 color = Color.White.copy(alpha = 0.58f),
                 fontSize = 15.sp,
                 fontWeight = FontWeight.Medium,
@@ -322,12 +322,14 @@ private fun PrimaryActionGrid(actions: List<CallAction>) {
 private fun DarkActionButton(action: CallAction) {
     val container = when {
         !action.enabled -> Color.White.copy(alpha = 0.07f)
-        action.selected -> Color(0xFF6C63FF)
-        else -> Color.White.copy(alpha = 0.10f)
+        action.selected -> Color(0x332EC4A6)
+        action.selected -> Color(0xFFBFEFE4)
+        else -> Color.White.copy(alpha = 0.82f).copy(alpha = 0.08f)
     }
     val content = when {
         !action.enabled -> Color.White.copy(alpha = 0.28f)
-        else -> Color.White
+        action.selected -> Color(0xFFBFEFE4)
+        else -> Color.White.copy(alpha = 0.82f)
     }
 
     Column(
@@ -369,8 +371,8 @@ private fun DarkActionButton(action: CallAction) {
 @Composable
 private fun SecondaryActions() {
     Surface(
-        shape = RoundedCornerShape(24.dp),
-        color = Color.White.copy(alpha = 0.72f),
+        shape = RoundedCornerShape(18.dp),
+        color = Color.White.copy(alpha = 0.08f),
         border = BorderStroke(1.dp, Color.White.copy(alpha = 0.62f)),
         modifier = Modifier.fillMaxWidth(),
     ) {
@@ -391,7 +393,7 @@ private fun MiniFooterAction(title: String, subtitle: String, enabled: Boolean) 
     Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.width(92.dp)) {
         Text(
             text = title,
-            color = if (enabled) Color(0xFF171823) else Color(0xFF8D847F),
+            color = if (enabled) Color.White else Color.White.copy(alpha = 0.28f),
             fontSize = 13.sp,
             fontWeight = FontWeight.SemiBold,
             maxLines = 1,
@@ -399,7 +401,7 @@ private fun MiniFooterAction(title: String, subtitle: String, enabled: Boolean) 
         )
         Text(
             text = subtitle,
-            color = Color(0xFF8D847F),
+            color = Color.White.copy(alpha = 0.38f),
             fontSize = 11.sp,
             maxLines = 1,
             overflow = TextOverflow.Ellipsis,
@@ -427,8 +429,8 @@ private fun DarkCompactDialPad(onClose: () -> Unit) {
         ) {
             Text(
                 text = "Keypad",
-                color = Color.White,
-                fontSize = 18.sp,
+                color = Color(0xFF2EC4A6),
+                fontSize = 24.sp,
                 fontWeight = FontWeight.SemiBold,
             )
             Surface(
@@ -478,7 +480,7 @@ private fun EndCallButton(onClick: () -> Unit) {
             .width(132.dp)
             .height(48.dp),
         shape = RoundedCornerShape(999.dp),
-        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFF5B47)),
+        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFD8335B)),
         contentPadding = PaddingValues(0.dp),
     ) {
         Text(

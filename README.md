@@ -1,64 +1,149 @@
 # CallApp
 
-This is an Android app project built with Android Studio and compatible with VS Code when the Android development environment is configured.
+A custom Android dialer prototype built with Kotlin and Jetpack Compose. The app explores a cleaner dark phone UI with calls, keypad, people, contact details, and a custom in-call screen.
 
-## Overview
+## Features
 
-A standard Android app project structured with Gradle Kotlin DSL (`build.gradle.kts`) and an `app/` module.
+- Dark, professional dialer UI inspired by modern phone-app concepts.
+- Calls screen with All, Missed, and Received filters.
+- People screen with saved contacts.
+- Keypad screen with responsive layout for emulator and phone sizes.
+- Contact detail bottom sheet when tapping a caller/contact.
+- Custom in-call activity with mute, hold, speaker, keypad, record placeholder, add-call placeholder, and end-call action.
+- Default dialer request flow.
+- Custom adaptive launcher icon.
+
+## Tech Stack
+
+- Kotlin
+- Jetpack Compose
+- Material 3
+- Android Telecom APIs
+- Gradle Kotlin DSL
 
 ## Requirements
 
-- Android Studio installed
-- Android SDK installed and configured
-- Java JDK compatible with the Android Gradle plugin
-- Emulator or physical Android device available
-- Optional: VS Code with Android/Java/Kotlin extensions for editing
+- Android Studio Ladybug or newer is recommended.
+- Android SDK installed.
+- Android emulator or physical Android phone.
+- JDK configured by Android Studio.
 
-## How to use after cloning
+This project includes the Gradle wrapper, so users do not need to install Gradle separately.
 
-1. Clone the repository:
+## Run In Android Studio
+
+1. Clone the repo:
 
 ```bash
-git clone <repo-url>
+git clone <your-repo-url>
 cd CallApp
 ```
 
-2. Open the project in Android Studio:
+2. Open the cloned `CallApp` folder in Android Studio.
+3. Let Android Studio finish Gradle sync.
+4. Start an emulator or connect an Android phone with USB debugging enabled.
+5. Click Run.
 
-- Select `Open`, then choose the cloned `CallApp` folder.
-- Let Gradle sync and build the project.
+If Android Studio asks to install missing SDK components, allow it.
 
-3. If `local.properties` is missing or invalid:
+## Run From Terminal
 
-- Android Studio usually regenerates it automatically when the SDK path is configured.
-- You can also create it manually with a line like:
+Build a debug APK:
 
-```properties
-sdk.dir=/Users/your-username/Library/Android/sdk
+```bash
+./gradlew assembleDebug
 ```
 
-4. Run the app:
+The APK will be generated at:
 
-- Start an emulator or connect a device.
-- Click the run button in Android Studio.
+```text
+app/build/outputs/apk/debug/app-debug.apk
+```
 
-## Using VS Code
+Install it on a connected emulator or phone:
 
-If you want to use VS Code instead of Android Studio:
+```bash
+adb install -r app/build/outputs/apk/debug/app-debug.apk
+```
 
-- Open the cloned folder in VS Code.
-- Install necessary Android and Kotlin extensions.
-- Make sure the Android SDK and emulator are configured.
-- Use Gradle tasks or an Android extension to build and run the app.
+Launch it:
 
-## Notes
+```bash
+adb shell am start -n com.example.callapp/.MainActivity
+```
 
-- `local.properties` is usually not committed to GitHub because it contains a local SDK path.
-- After cloning, the user must configure their own SDK path before running the app.
-- The repo should be ready to build and run once the Android environment is set up correctly.
+## Use On Your Phone
 
-## Push to GitHub
+1. Build the debug APK using Android Studio or `./gradlew assembleDebug`.
+2. Transfer `app-debug.apk` to your phone, or install using `adb install -r`.
+3. Open the app.
+4. Tap the default dialer prompt if shown.
+5. In Android settings, choose CallApp as the default Phone app.
 
-- Add this `README.md` to the repository.
-- Commit and push to GitHub.
-- Anyone cloning the repo will then have this usage guide available.
+On most Android phones:
+
+```text
+Settings > Apps > Default apps > Phone app > CallApp
+```
+
+Some manufacturers place this under Apps > Manage apps > Default apps.
+
+## Important Android Notes
+
+- Google Phone is not open-source. This project does not modify Google Phone; it builds a replacement dialer app.
+- Android only allows full dialer behavior after the user sets the app as the default Phone app.
+- Call recording is heavily restricted by Android version, region, manufacturer, and Play Store policy. The current Record control is a UI placeholder.
+- Some in-call features may behave differently on emulators compared with real phones.
+
+## VS Code Workflow
+
+You can edit the project in VS Code, but Android Studio is still useful for SDK setup, Gradle sync, emulator management, and Logcat.
+
+Recommended workflow:
+
+1. Open the same cloned folder in VS Code.
+2. Edit Kotlin/XML files.
+3. Save changes.
+4. Use Android Studio or Gradle commands to build/run.
+
+## What Not To Commit
+
+Do not commit machine-specific files such as:
+
+- `local.properties`
+- `.gradle/`
+- `.idea/workspace.xml`
+- build outputs
+- generated APK files
+
+The included `.gitignore` already excludes these.
+
+## Project Structure
+
+```text
+app/src/main/java/com/example/callapp/MainActivity.kt
+app/src/main/java/com/example/callapp/InCallActivity.kt
+app/src/main/java/com/example/callapp/MinimalInCallService.kt
+app/src/main/java/com/example/callapp/MinimalCallScreeningService.kt
+app/src/main/AndroidManifest.xml
+app/src/main/res/drawable/ic_launcher_background.xml
+app/src/main/res/drawable/ic_launcher_foreground.xml
+```
+
+## GitHub Setup
+
+Initialize Git if needed:
+
+```bash
+git init
+git add .
+git commit -m "Initial CallApp dialer prototype"
+```
+
+Create an empty GitHub repository, then connect and push:
+
+```bash
+git remote add origin https://github.com/<your-username>/<repo-name>.git
+git branch -M main
+git push -u origin main
+```

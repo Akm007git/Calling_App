@@ -84,18 +84,18 @@ private data class Caller(
 )
 
 private val sampleCalls = listOf(
-    Caller("Theresa Webb", "+1 (420) 425-0133", "TW", CallType.Received, "10:42", "Mobile", Color(0xFFFFC0A6)),
-    Caller("Jenny Wilson", "+1 (560) 555-0100", "JW", CallType.Missed, "09:18", "Missed call", Color(0xFFB9B0FF)),
-    Caller("Robert Fox", "+1 (704) 555-0127", "RF", CallType.Received, "Yesterday", "Work", Color(0xFFFFDA8B)),
-    Caller("Arlene McCoy", "+1 (584) 555-0102", "AM", CallType.Outgoing, "Sat", "Outgoing", Color(0xFFA7E2C1)),
-    Caller("Cameron Williamson", "+1 (505) 555-0148", "CW", CallType.Missed, "Fri", "Missed call", Color(0xFFF0A8AE)),
+    Caller("Theresa Webb", "+1 (420) 425-0133", "TW", CallType.Received, "10:42", "Mobile", Color(0xFF2EC4A6)),
+    Caller("Jenny Wilson", "+1 (560) 555-0100", "JW", CallType.Missed, "09:18", "Missed call", Color(0xFF4F8CFF)),
+    Caller("Robert Fox", "+1 (704) 555-0127", "RF", CallType.Received, "Yesterday", "Work", Color(0xFFFFC75F)),
+    Caller("Arlene McCoy", "+1 (584) 555-0102", "AM", CallType.Outgoing, "Sat", "Outgoing", Color(0xFF00B874)),
+    Caller("Cameron Williamson", "+1 (505) 555-0148", "CW", CallType.Missed, "Fri", "Missed call", Color(0xFFE84D6A)),
 )
 
 private val favoritePeople = listOf(
-    Caller("Ananya Sharma", "(900) 000-0000", "AS", CallType.Received, "Favorite", "Mobile", Color(0xFFFFB28C)),
+    Caller("Ananya Sharma", "(900) 000-0000", "AS", CallType.Received, "Favorite", "Mobile", Color(0xFF2EC4A6)),
     Caller("Rahul Mehta", "+91 90000 00001", "RM", CallType.Received, "Team", "Work", Color(0xFFAAD9C5)),
-    Caller("Priya Nair", "+91 90000 00002", "PN", CallType.Outgoing, "Home", "Family", Color(0xFFB9B0FF)),
-    Caller("Design Studio", "+91 98765 43210", "DS", CallType.Received, "Work", "Saved", Color(0xFFFFDA8B)),
+    Caller("Priya Nair", "+91 90000 00002", "PN", CallType.Outgoing, "Home", "Family", Color(0xFF4F8CFF)),
+    Caller("Design Studio", "+91 98765 43210", "DS", CallType.Received, "Work", "Saved", Color(0xFFFFC75F)),
 )
 
 class MainActivity : ComponentActivity() {
@@ -141,7 +141,7 @@ private fun DialerHome() {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Brush.verticalGradient(listOf(Color(0xFFFFB08A), Color(0xFFFFEEE5), Color(0xFFF6F1EA))))
+            .background(Brush.verticalGradient(listOf(Color(0xFF56616B), Color(0xFF242C34), Color(0xFF0E1217))))
     ) {
         Scaffold(
             contentWindowInsets = WindowInsets(0),
@@ -208,24 +208,24 @@ private fun HomeHeader(isDefaultDialer: Boolean, onRequestDefault: () -> Unit) {
         horizontalArrangement = Arrangement.SpaceBetween,
     ) {
         Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
-            Text("My Phone", color = Color(0xFF151622), fontSize = 27.sp, fontWeight = FontWeight.SemiBold)
+            Text("Phone", color = Color.White, fontSize = 24.sp, fontWeight = FontWeight.SemiBold)
             Text(
                 text = if (isDefaultDialer) "Default phone app" else "Set as default to replace Google Phone",
-                color = Color(0xFF6D625B),
-                fontSize = 13.sp,
+                color = Color.White.copy(alpha = 0.54f),
+                fontSize = 12.sp,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
             )
         }
         Surface(
             onClick = { if (!isDefaultDialer) onRequestDefault() },
-            shape = RoundedCornerShape(18.dp),
-            color = if (isDefaultDialer) Color(0xFF171823) else Color.White.copy(alpha = 0.82f),
-            border = BorderStroke(1.dp, Color.White.copy(alpha = 0.5f)),
+            shape = RoundedCornerShape(14.dp),
+            color = if (isDefaultDialer) Color.White.copy(alpha = 0.10f) else Color.White.copy(alpha = 0.10f),
+            border = BorderStroke(1.dp, Color.White.copy(alpha = 0.12f)),
         ) {
             Text(
                 text = if (isDefaultDialer) "Ready" else "Default",
-                color = if (isDefaultDialer) Color.White else Color(0xFF171823),
+                color = if (isDefaultDialer) Color(0xFF07120F) else Color.White,
                 fontSize = 13.sp,
                 fontWeight = FontWeight.SemiBold,
                 modifier = Modifier.padding(horizontal = 13.dp, vertical = 10.dp),
@@ -238,30 +238,30 @@ private fun HomeHeader(isDefaultDialer: Boolean, onRequestDefault: () -> Unit) {
 private fun HomeTabs(activeTab: HomeTab, onChange: (HomeTab) -> Unit) {
     Surface(
         modifier = Modifier.fillMaxWidth(),
-        shape = RoundedCornerShape(24.dp),
-        color = Color.White.copy(alpha = 0.76f),
-        border = BorderStroke(1.dp, Color.White.copy(alpha = 0.75f)),
+        shape = RoundedCornerShape(18.dp),
+        color = Color(0xD9161C23),
+        border = BorderStroke(1.dp, Color.White.copy(alpha = 0.08f)),
     ) {
         Row(modifier = Modifier.padding(5.dp), horizontalArrangement = Arrangement.spacedBy(5.dp)) {
             HomeTab.entries.forEach { tab ->
                 val selected = tab == activeTab
-                val bg by animateColorAsState(if (selected) Color(0xFF171823) else Color.Transparent, label = "tab")
+                val bg by animateColorAsState(if (selected) Color(0xFF26333B) else Color.Transparent, label = "tab")
                 Text(
                     text = when (tab) {
                         HomeTab.Calls -> "Calls"
                         HomeTab.Keypad -> "Keypad"
                         HomeTab.People -> "People"
                     },
-                    color = if (selected) Color.White else Color(0xFF6F625A),
+                    color = if (selected) Color(0xFF07120F) else Color.White.copy(alpha = 0.48f),
                     fontSize = 14.sp,
                     fontWeight = FontWeight.SemiBold,
                     textAlign = TextAlign.Center,
                     modifier = Modifier
                         .weight(1f)
-                        .clip(RoundedCornerShape(19.dp))
+                        .clip(RoundedCornerShape(14.dp))
                         .background(bg)
                         .clickable { onChange(tab) }
-                        .padding(vertical = 11.dp),
+                        .padding(vertical = 10.dp),
                 )
             }
         }
@@ -289,9 +289,36 @@ private fun CallsScreen(
         contentPadding = PaddingValues(bottom = 12.dp),
     ) {
         item { FilterRow(filter = filter, onFilterChange = onFilterChange) }
+        item { HighlightCallCard(caller = sampleCalls.first(), onOpen = { onOpen(sampleCalls.first()) }) }
         item { SectionTitle("Recent activity") }
         items(calls) { caller ->
             CallerRow(caller = caller, onOpen = { onOpen(caller) }, onCall = { onCall(caller) })
+        }
+    }
+}
+
+@Composable
+private fun HighlightCallCard(caller: Caller, onOpen: () -> Unit) {
+    Surface(
+        onClick = onOpen,
+        modifier = Modifier.fillMaxWidth(),
+        shape = RoundedCornerShape(16.dp),
+        color = Color(0xE0181F27),
+        border = BorderStroke(1.dp, Color(0x552EC4A6)),
+    ) {
+        Row(
+            modifier = Modifier.padding(horizontal = 14.dp, vertical = 12.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(12.dp),
+        ) {
+            Avatar(caller.initials, Color(0xFF2EC4A6), 46.dp)
+            Column(modifier = Modifier.weight(1f)) {
+                Text(caller.name, color = Color.White, fontSize = 16.sp, fontWeight = FontWeight.SemiBold)
+                Text(caller.number, color = Color.White.copy(alpha = 0.58f), fontSize = 12.sp, fontWeight = FontWeight.Medium)
+            }
+            Surface(shape = RoundedCornerShape(999.dp), color = Color(0x332EC4A6)) {
+                Text("Now", color = Color(0xFFBFEFE4), fontSize = 11.sp, fontWeight = FontWeight.SemiBold, modifier = Modifier.padding(horizontal = 9.dp, vertical = 5.dp))
+            }
         }
     }
 }
@@ -304,8 +331,8 @@ private fun FilterRow(filter: CallFilter, onFilterChange: (CallFilter) -> Unit) 
             Surface(
                 onClick = { onFilterChange(option) },
                 shape = RoundedCornerShape(999.dp),
-                color = if (selected) Color(0xFF171823) else Color.White.copy(alpha = 0.72f),
-                border = BorderStroke(1.dp, Color.White.copy(alpha = 0.62f)),
+                color = if (selected) Color(0xFF2EC4A6) else Color.White.copy(alpha = 0.08f),
+                border = BorderStroke(1.dp, Color.White.copy(alpha = 0.08f)),
                 modifier = Modifier.weight(1f),
             ) {
                 Text(
@@ -314,7 +341,7 @@ private fun FilterRow(filter: CallFilter, onFilterChange: (CallFilter) -> Unit) 
                         CallFilter.Missed -> "Missed"
                         CallFilter.Received -> "Received"
                     },
-                    color = if (selected) Color.White else Color(0xFF5F554F),
+                    color = if (selected) Color(0xFF07120F) else Color.White.copy(alpha = 0.55f),
                     fontWeight = FontWeight.SemiBold,
                     fontSize = 13.sp,
                     textAlign = TextAlign.Center,
@@ -344,16 +371,16 @@ private fun PeopleScreen(onOpen: (Caller) -> Unit, onCall: (Caller) -> Unit) {
 private fun FavoriteStrip() {
     Surface(
         modifier = Modifier.fillMaxWidth(),
-        shape = RoundedCornerShape(30.dp),
-        color = Color(0xEE171823),
-        border = BorderStroke(1.dp, Color.White.copy(alpha = 0.12f)),
+        shape = RoundedCornerShape(24.dp),
+        color = Color(0xE0181F27),
+        border = BorderStroke(1.dp, Color.White.copy(alpha = 0.08f)),
     ) {
         Row(
             modifier = Modifier.padding(16.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(14.dp),
         ) {
-            Avatar(initials = "AS", accent = Color(0xFFFFB28C), size = 58.dp)
+            Avatar(initials = "AS", accent = Color(0xFF2EC4A6), size = 58.dp)
             Column(modifier = Modifier.weight(1f)) {
                 Text("Favorite", color = Color.White.copy(alpha = 0.55f), fontSize = 12.sp, fontWeight = FontWeight.SemiBold)
                 Text("Ananya Sharma", color = Color.White, fontSize = 19.sp, fontWeight = FontWeight.SemiBold)
@@ -394,9 +421,9 @@ private fun KeypadScreen(
 private fun DarkNumberPanel(number: String, onClear: () -> Unit) {
     Surface(
         modifier = Modifier.fillMaxWidth(),
-        shape = RoundedCornerShape(30.dp),
-        color = Color(0xEE171823),
-        border = BorderStroke(1.dp, Color.White.copy(alpha = 0.14f)),
+        shape = RoundedCornerShape(24.dp),
+        color = Color(0xE0141A21),
+        border = BorderStroke(1.dp, Color.White.copy(alpha = 0.08f)),
     ) {
         Column(
             modifier = Modifier.padding(horizontal = 18.dp, vertical = 20.dp),
@@ -449,14 +476,14 @@ private fun Keypad(onDigit: (String) -> Unit, keyHeight: Dp) {
 private fun DialKey(digit: String, letters: String, height: Dp, modifier: Modifier = Modifier, onClick: () -> Unit) {
     Surface(
         modifier = modifier.height(height),
-        shape = RoundedCornerShape(22.dp),
-        color = Color.White.copy(alpha = 0.78f),
-        border = BorderStroke(1.dp, Color.White.copy(alpha = 0.7f)),
+        shape = RoundedCornerShape(18.dp),
+        color = Color(0xB8181F27),
+        border = BorderStroke(1.dp, Color.White.copy(alpha = 0.07f)),
         onClick = onClick,
     ) {
         Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
-            Text(digit, color = Color(0xFF151622), fontSize = 28.sp, fontWeight = FontWeight.Medium)
-            Text(letters, color = Color(0xFF8B7B72), fontSize = 10.sp, fontWeight = FontWeight.Bold, minLines = 1)
+            Text(digit, color = Color.White.copy(alpha = 0.88f), fontSize = 28.sp, fontWeight = FontWeight.Light)
+            Text(letters, color = Color.White.copy(alpha = 0.42f), fontSize = 10.sp, fontWeight = FontWeight.Bold, minLines = 1)
         }
     }
 }
@@ -473,9 +500,9 @@ private fun KeypadActions(onDelete: () -> Unit, onPlus: () -> Unit, onCall: () -
             modifier = Modifier.width(140.dp).height(56.dp),
             onClick = onCall,
             shape = RoundedCornerShape(999.dp),
-            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFF5B47)),
+            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF24B394)),
             contentPadding = PaddingValues(0.dp),
-        ) { Text("Call", color = Color.White, fontSize = 17.sp, fontWeight = FontWeight.SemiBold) }
+        ) { Text("Call", color = Color(0xFF07120F), fontSize = 17.sp, fontWeight = FontWeight.SemiBold) }
         RoundUtilityButton("+", onPlus)
     }
 }
@@ -485,28 +512,28 @@ private fun RoundUtilityButton(label: String, onClick: () -> Unit) {
     Surface(
         modifier = Modifier.size(56.dp),
         shape = CircleShape,
-        color = Color.White.copy(alpha = 0.74f),
-        border = BorderStroke(1.dp, Color.White.copy(alpha = 0.72f)),
+        color = Color.White.copy(alpha = 0.08f),
+        border = BorderStroke(1.dp, Color.White.copy(alpha = 0.08f)),
         onClick = onClick,
     ) {
         Box(contentAlignment = Alignment.Center) {
-            Text(label, color = Color(0xFF151622), fontSize = 15.sp, fontWeight = FontWeight.SemiBold)
+            Text(label, color = Color.White.copy(alpha = 0.78f), fontSize = 15.sp, fontWeight = FontWeight.SemiBold)
         }
     }
 }
 
 @Composable
 private fun SectionTitle(title: String) {
-    Text(title, color = Color(0xFF151622), fontSize = 20.sp, fontWeight = FontWeight.SemiBold, modifier = Modifier.padding(top = 2.dp))
+    Text(title, color = Color.White, fontSize = 18.sp, fontWeight = FontWeight.SemiBold, modifier = Modifier.padding(top = 2.dp))
 }
 
 @Composable
 private fun CallerRow(caller: Caller, onOpen: () -> Unit, onCall: () -> Unit) {
     Card(
         modifier = Modifier.fillMaxWidth(),
-        shape = RoundedCornerShape(26.dp),
-        colors = CardDefaults.cardColors(containerColor = Color.White.copy(alpha = 0.78f)),
-        border = BorderStroke(1.dp, Color.White.copy(alpha = 0.72f)),
+        shape = RoundedCornerShape(18.dp),
+        colors = CardDefaults.cardColors(containerColor = Color(0xE0181F27)),
+        border = BorderStroke(1.dp, Color.White.copy(alpha = 0.07f)),
         elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
     ) {
         Row(
@@ -519,13 +546,13 @@ private fun CallerRow(caller: Caller, onOpen: () -> Unit, onCall: () -> Unit) {
         ) {
             Avatar(caller.initials, caller.accent, 50.dp)
             Column(modifier = Modifier.weight(1f)) {
-                Text(caller.name, color = Color(0xFF151622), fontSize = 16.sp, fontWeight = FontWeight.SemiBold, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                Text(caller.name, color = Color.White, fontSize = 15.sp, fontWeight = FontWeight.SemiBold, maxLines = 1, overflow = TextOverflow.Ellipsis)
                 Text("${caller.subtitle}  ${caller.number}", color = statusColor(caller.type), fontSize = 12.sp, maxLines = 1, overflow = TextOverflow.Ellipsis)
             }
             Column(horizontalAlignment = Alignment.End, verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                Text(caller.time, color = Color(0xFF8A7B73), fontSize = 12.sp, fontWeight = FontWeight.Medium)
-                Surface(onClick = onCall, shape = RoundedCornerShape(999.dp), color = Color(0xFF171823)) {
-                    Text("Call", color = Color.White, fontSize = 12.sp, fontWeight = FontWeight.SemiBold, modifier = Modifier.padding(horizontal = 12.dp, vertical = 7.dp))
+                Text(caller.time, color = Color.White.copy(alpha = 0.38f), fontSize = 11.sp, fontWeight = FontWeight.Medium)
+                Surface(onClick = onCall, shape = RoundedCornerShape(999.dp), color = Color.White.copy(alpha = 0.08f), border = BorderStroke(1.dp, Color(0x442EC4A6))) {
+                    Text("Call", color = Color(0xFFBFEFE4), fontSize = 12.sp, fontWeight = FontWeight.SemiBold, modifier = Modifier.padding(horizontal = 12.dp, vertical = 7.dp))
                 }
             }
         }
@@ -537,8 +564,8 @@ private fun Avatar(initials: String, accent: Color, size: Dp) {
     Box(
         modifier = Modifier
             .size(size)
-            .clip(RoundedCornerShape(size / 3))
-            .background(Brush.linearGradient(listOf(accent, Color(0xFF171823)))),
+            .clip(CircleShape)
+            .background(Brush.linearGradient(listOf(accent, Color(0xFF101820)))),
         contentAlignment = Alignment.Center,
     ) {
         Text(initials, color = Color.White, fontWeight = FontWeight.SemiBold, fontSize = (size.value * 0.34f).sp)
@@ -556,8 +583,8 @@ private fun ContactDetailsOverlay(caller: Caller, onDismiss: () -> Unit, onCall:
         Surface(
             modifier = Modifier.fillMaxWidth().padding(16.dp),
             shape = RoundedCornerShape(34.dp),
-            color = Color(0xFF171823),
-            border = BorderStroke(1.dp, Color.White.copy(alpha = 0.14f)),
+            color = Color(0xF2171D24),
+            border = BorderStroke(1.dp, Color.White.copy(alpha = 0.08f)),
         ) {
             Column(
                 modifier = Modifier.padding(20.dp),
@@ -575,8 +602,8 @@ private fun ContactDetailsOverlay(caller: Caller, onDismiss: () -> Unit, onCall:
                     DetailMetric("Line", caller.subtitle, Modifier.weight(1f))
                 }
                 Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                    Surface(onClick = onCall, shape = RoundedCornerShape(22.dp), color = Color(0xFFFF5B47), modifier = Modifier.weight(1f).height(54.dp)) {
-                        Box(contentAlignment = Alignment.Center) { Text("Call", color = Color.White, fontSize = 16.sp, fontWeight = FontWeight.SemiBold) }
+                    Surface(onClick = onCall, shape = RoundedCornerShape(18.dp), color = Color(0xFF2EC4A6), modifier = Modifier.weight(1f).height(54.dp)) {
+                        Box(contentAlignment = Alignment.Center) { Text("Call", color = Color(0xFF07120F), fontSize = 16.sp, fontWeight = FontWeight.SemiBold) }
                     }
                     Surface(onClick = onDismiss, shape = RoundedCornerShape(22.dp), color = Color.White.copy(alpha = 0.10f), modifier = Modifier.weight(1f).height(54.dp)) {
                         Box(contentAlignment = Alignment.Center) { Text("Close", color = Color.White, fontSize = 16.sp, fontWeight = FontWeight.SemiBold) }
@@ -599,9 +626,9 @@ private fun DetailMetric(label: String, value: String, modifier: Modifier = Modi
 
 private fun statusColor(type: CallType): Color {
     return when (type) {
-        CallType.Missed -> Color(0xFFE2594E)
-        CallType.Received -> Color(0xFF47765B)
-        CallType.Outgoing -> Color(0xFF6B5DAD)
+        CallType.Missed -> Color(0xFFFF5A70)
+        CallType.Received -> Color(0xFF2EC4A6)
+        CallType.Outgoing -> Color(0xFF8EA2FF)
     }
 }
 
